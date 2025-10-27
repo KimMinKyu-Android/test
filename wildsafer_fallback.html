@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WildSafer</title>
+  <script>
+    const packageName = "com.itx.wildsafer";
+    const shareCodeParam = new URLSearchParams(window.location.search).get("shareCode");
+    const customScheme = `wildsafer://open/?shareCode=${shareCodeParam}`;
+    const playStoreUrl = `https://play.google.com/store/apps/details?id=${packageName}`;
+
+    function openApp() {
+      // ✅ 앱 실행 시도
+      window.location = customScheme;
+
+      // ✅ 앱이 없으면 Play Store 이동
+      setTimeout(() => {
+        window.location.href = playStoreUrl;
+      }, 1000);
+    }
+  </script>
+</head>
+<body onload="openApp()">
+  <p>앱을 여는 중입니다...</p>
+</body>
+</html>
