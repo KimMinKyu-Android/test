@@ -12,11 +12,11 @@
 
     function openApp() {
       // ✅ 앱 실행 시도
-      window.location = customScheme;
+      window.location.replace(customScheme);
 
       // ✅ 앱이 없으면 Play Store 이동
       setTimeout(() => {
-        window.location.href = playStoreUrl;
+        window.location.replace(playStoreUrl);
       }, 1000);
     }
   </script>
@@ -24,4 +24,5 @@
 <body onload="openApp()">
   <p>앱을 여는 중입니다...</p>
 </body>
+
 </html>
