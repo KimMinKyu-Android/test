@@ -11,18 +11,19 @@
     const playStoreUrl = `https://play.google.com/store/apps/details?id=${packageName}`;
 
     function openApp() {
-      // ✅ 앱 실행 시도
-      window.location.replace(customScheme);
+      window.location = customScheme;
 
-      // ✅ 앱이 없으면 Play Store 이동
       setTimeout(() => {
-        window.location.replace(playStoreUrl);
+        window.location.href = playStoreUrl;
       }, 1000);
     }
   </script>
 </head>
-<body onload="openApp()">
-  <p>앱을 여는 중입니다...</p>
+<body onload="openApp()" style="text-align:center; background:#F7F9FC; font-family:sans-serif;">
+    <div style="margin-top:120px;">
+        <img src="https://KimMinKyu-Android.github.io/test/app_icon.png" width="64">
+        <h3 style="color:#333;">WildSafer로 이동 중입니다...</h3>
+        <p style="color:#666;">잠시만 기다려주세요</p>
+    </div>
 </body>
-
 </html>
